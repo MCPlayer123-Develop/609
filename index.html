@@ -11,7 +11,17 @@
             }
         </style>
         <script>
-
+            // 从 URL 参数获取登录用户名
+            window.onload = function() {
+                var params = new URLSearchParams(window.location.search);
+                var username = params.get('username');
+                var usernameEl = document.getElementById("username");
+                if (username) {
+                    usernameEl.textContent = "欢迎，" + username + "！";
+                } else {
+                    usernameEl.textContent = "";
+                }
+            };
         </script>
     </head>
     <body>

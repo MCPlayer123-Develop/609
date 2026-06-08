@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>609 - 注册</title>
+        <style>
+            .link_style{
+                background-color: palegreen;
+                color: skyblue;
+                padding: 20px 20px;
+                text-decoration: none;
+            }
+            .shown{display:block;}
+            .hidden{display:none;}
+        </style>
+        <script>
+            var s;
+            function getCode(){
+                s = Math.floor(Math.random() * 100000) + 1;
+                window.alert("你的验证码是：" + s);
+            }
+            function register(){
+                var v = document.getElementById("verify_code").value;
+                if (v != s) {
+                    window.alert("验证码错误");
+                    return;
+                }
+                document.getElementById("register_href").className="shown";
+            }
+        </script>
+    </head>
+    <body>
+        <div class width="800" height="80" id="top">
+            <a href="./index.html" style="text-decoration: none;">
+                <span><img src="./609_icon.png" alt="7891" width="100" height="75"></img></span>
+            </a>
+            <a href="./index.html" class="link_style">主页</a>
+            <a href="./login.html" class="link_style">登录</a>
+            <a href="./register.html" class="link_style">注册</a>
+        </div>
+        <br>
+        <div class id="main" style="text-align: center;">
+            <img src="./609_icon.png" alt="7891" width="200" height="150"></img>
+            <div style="font-size: 30px;">注册</div>
+            <input placeholder="验证码" id="verify_code"></input>
+            <button onclick="getCode()">获取验证码</button>
+            <br>
+            <button onclick="register()" style="background-color: palegreen;">继续注册</button>
+            <div class="hidden" id="register_href">
+                <a href="https://note.ms/hqzx609users" style="color: skyblue; text-decoration: none;">去注册</a>
+                <br>
+                <p>注册步骤：</p>
+                <ol>
+                    <li>点击链接进入注册输入用户名网址；</li>
+                    <li>输入用户名和密码；</li>
+                    <li>格式：用户名 密码（记得和上一个换行，每个用户名和密码占一行，并且用户名和密码之间用空格隔开）</li>
+                </ol>
+                <h3>如果你嫌麻烦，给网站开发者一个服务器吧:)</h3>
+            </div>
+            <br>
+            <a href="./login.html" style="color: skyblue; text-decoration: none;">已有账号？立即登录！</a>
+        </div>
+    </body>
+</html>
